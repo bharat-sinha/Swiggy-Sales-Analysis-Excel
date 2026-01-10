@@ -19,3 +19,9 @@ Business Impact:
 
 Enabled data-driven recommendations for weekday demand stimulation, product mix optimization, and regional risk diversification.
 Highlighted the need for margin and repeat-customer metrics to move from revenue reporting to profitability-focused decision support.
+
+Developed by: Bharat Sinha
+
+Notes for Recruiters
+
+Built entirely in Excel (no VBA, no macros) Designed to mirror real business reporting dashboards Focused on clarity, performance tracking, and decision support This project demonstrates the ability to translate raw retail data into structured, actionable insights using Excel.
