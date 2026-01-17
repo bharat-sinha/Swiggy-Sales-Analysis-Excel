@@ -25,3 +25,5 @@ Developed by: Bharat Sinha
 Notes for Recruiters
 
 Built entirely in Excel (no VBA, no macros) Designed to mirror real business reporting dashboards Focused on clarity, performance tracking, and decision support This project demonstrates the ability to translate raw retail data into structured, actionable insights using Excel.
+
+![image alt](https://github.com/MrMonsterAnalyst/Swiggy-Sales-Analysis-excel/blob/b208bb42158b51f4579f4fbf4a0b6c12cc147ddd/Swiggy%20Dashboard.png)
