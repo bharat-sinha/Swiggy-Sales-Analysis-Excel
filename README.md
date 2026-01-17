@@ -1,4 +1,4 @@
-# Swiggy-Sales-Analysis
+# Swiggy-Sales-Analysis-Excel
 Tools: Excel (Power Query, Pivot Tables, Advanced Charts), Data Modeling, Business Analytics
 Domain: Food Delivery | E-commerce Analytics
 
