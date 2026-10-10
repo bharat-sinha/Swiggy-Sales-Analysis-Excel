@@ -1,29 +1,105 @@
-# Swiggy-Sales-Analysis-Excel
-Tools: Excel (Power Query, Pivot Tables, Advanced Charts), Data Modeling, Business Analytics
-Domain: Food Delivery | E-commerce Analytics
+# Swiggy Food Delivery Sales Dashboard (Excel)
 
-Project Overview:
-Built an interactive business intelligence dashboard to analyze Swiggy’s sales performance, customer behavior, and regional demand patterns, with the objective of identifying revenue drivers, demand concentration risks, and operational optimization opportunities.
+![Swiggy sales dashboard](Swiggy%20Dashboard.png)
 
-Key Contributions & Insights:
+An interactive Excel dashboard that shows where a food delivery business earns its revenue, when demand rises and falls, and how sales spread across cities, food categories and restaurants. It covers about ₹53M in revenue across roughly 197K orders.
 
-Analyzed ₹53M+ revenue across ~197K orders, identifying weekend-driven demand spikes and stable weekday baselines to support demand forecasting and promotional planning.
-Evaluated Average Order Value (₹268) and order distribution to validate revenue consistency and flag pricing sensitivity risks in a mass-market model.
-Identified revenue concentration across Veg food category (63%) and top metro cities, highlighting dependency risks and potential Tier-2 city expansion opportunities.
-Conducted time-series analysis (daily, weekly, monthly, quarterly) to detect a ~33% demand drop in Q3, isolating demand-side decline while customer ratings remained stable.
-Assessed customer satisfaction metrics (4.34 avg rating) and flagged data granularity mismatches between ratings and orders as a data quality risk.
-Designed state- and city-level performance views to compare geographic contribution and support regional growth prioritization.
-Implemented dynamic slicers and filters (month, category, restaurant) to enable stakeholder-driven exploration without manual analysis.
+**Tools:** Excel (Power Query, PivotTables, PivotCharts, slicers)
+**Domain:** Food delivery, e-commerce analytics
 
-Business Impact:
+---
 
-Enabled data-driven recommendations for weekday demand stimulation, product mix optimization, and regional risk diversification.
-Highlighted the need for margin and repeat-customer metrics to move from revenue reporting to profitability-focused decision support.
+## Business problem
 
-Developed by: Bharat Sinha
+A food delivery platform depends on a few cities and categories for most of its revenue, and its demand moves with the day of the week and the season. Management needs to see where revenue is concentrated, when demand drops, and which regions and categories to prioritize.
 
-Notes for Recruiters
+## Questions the dashboard answers
 
-Built entirely in Excel (no VBA, no macros) Designed to mirror real business reporting dashboards Focused on clarity, performance tracking, and decision support This project demonstrates the ability to translate raw retail data into structured, actionable insights using Excel.
+1. How much revenue and how many orders do we have, and what is the average order value?
+2. How does demand change across days, weeks, months and quarters?
+3. Which cities and states contribute the most revenue?
+4. Which food categories lead, and how much does revenue depend on one of them?
+5. How satisfied are customers (average rating)?
+6. How do restaurants compare within a filtered view?
 
-![image alt](https://github.com/MrMonsterAnalyst/Swiggy-Sales-Analysis-excel/blob/b208bb42158b51f4579f4fbf4a0b6c12cc147ddd/Swiggy%20Dashboard.png)
+## Dataset
+
+- **Source:** Swiggy raw data (a public practice dataset, included as `Swiggy Raw Data Excel.xlsx`)
+- **Size:** about 197K orders
+- **Main fields:** order date, state, city, restaurant, food category, dish, price, rating
+- **Note:** this is a sample dataset, not data from the real company.
+
+## Approach
+
+1. **Clean** the raw data in Power Query: fix data types, handle blanks, standardize labels, create date fields (day, week, month, quarter).
+2. **Define the metrics** (see below) so each number has one clear meaning.
+3. **Analyze** with PivotTables for time trends, geography, category and ratings.
+4. **Visualize** with PivotCharts and KPI cards on one dashboard sheet, with slicers for month, category and restaurant.
+
+## Metric definitions
+
+| Metric | Definition |
+|---|---|
+| Revenue | Sum of order values (about ₹53M) |
+| Orders | Number of order records (about 197K) |
+| Average order value (AOV) | Revenue ÷ orders (about ₹268) |
+| Average rating | Mean of the rating field (4.34) |
+
+## Key findings
+
+| Area | Finding |
+|---|---|
+| Scale | About ₹53M revenue from about 197K orders, average order value about ₹268 |
+| Weekly pattern | Weekend demand spikes above a steady weekday baseline |
+| Category | Veg food accounts for about 63% of revenue |
+| Geography | Revenue is concentrated in the top metro cities |
+| Seasonality | Orders fall by about 33% in Q3, while average ratings stay stable |
+| Satisfaction | Average rating 4.34 |
+
+Read these as patterns in the sample data, not as proven causes.
+
+## Recommendations
+
+These are hypotheses for a business team to test, based on what the dashboard shows.
+
+1. **Investigate the Q3 drop before acting on it.** First confirm the data covers all of Q3 and is complete. Then break the drop down by city, category and week to see where it comes from.
+2. **Test weekday promotions.** Weekends carry the peaks, so a small weekday offer in selected cities is a low-risk experiment.
+3. **Treat metro concentration as a risk, not yet an opportunity.** Revenue sitting in a few cities shows dependence. To judge Tier-2 potential, look at order growth rates and not just revenue share.
+4. **Check the veg share by city and restaurant.** A 63% share may be higher or lower in places, and the pattern would guide menu and restaurant partnerships.
+5. **Resolve the rating data issue.** Ratings and orders are recorded at different levels, so rating comparisons across segments need care.
+
+## Limitations
+
+- The dataset has no cost, margin or delivery data, so I can describe revenue but not profitability.
+- There are no customer IDs, so repeat-purchase behavior can't be measured.
+- Ratings and orders differ in granularity, which limits how far rating trends can be trusted.
+- The cause of the Q3 drop is unknown from this data.
+- The data is a sample covering a limited period.
+
+## Next steps
+
+- Break down the Q3 decline by city, category and week.
+- Add growth rates by city to compare metro and Tier-2 potential.
+- Add margin and repeat-customer metrics if the data allows.
+- Rebuild the dashboard in Power BI and compare it with this Excel version.
+
+## Repository contents
+
+```
+├── Swiggy Raw Data Excel.xlsx       # raw dataset
+├── pivot + dashboard swiggy.xlsx    # PivotTables and dashboard
+├── Swiggy Dashboard.png             # dashboard screenshot
+├── swiggy analysis.pdf              # exported report
+└── README.md
+```
+
+**To explore:** download `pivot + dashboard swiggy.xlsx`, open it in Excel, and use the slicers on the dashboard sheet to filter by month, category and restaurant.
+
+## Skills demonstrated
+
+Data cleaning (Power Query) · PivotTables and PivotCharts · KPI and metric definition · Time-series analysis · Dashboard design with slicers · Turning findings into recommendations
+
+## Author
+
+**Bharat Sinha**, aspiring data analyst
+[LinkedIn](https://www.linkedin.com/in/bharat-sinha-122791130/) | [GitHub](https://github.com/bharat-sinha) | sinha.bharat8@gmail.com
